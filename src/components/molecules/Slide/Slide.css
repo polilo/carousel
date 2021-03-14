@@ -1,0 +1,6 @@
+.slide {
+  position: relative;
+  min-width: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+}

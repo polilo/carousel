@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 
 const VideoComp = ({ src, type = 'mp4' }) => {
     const videoStyles = {
-        width: 100 + '%',
-        height: 100 + '%'
+        width: '100%',
+        height: '100%'
     };
 
     return (

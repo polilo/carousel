@@ -1,14 +1,13 @@
 import React, { useState, useRef, useCallback, memo } from 'react';
-import arrowLeft from '../../img/arrow_left.svg';
-import arrowRight from '../../img/arrow_right.svg';
-import { swipeStart, swipeMove } from '../../utils/swipe';
-import { nextClick, prevClick } from '../../utils/arrow';
-import ImgComp from '../atoms/ImgComp';
-import VideoComp from '../atoms/VideoComp';
-import TextComp from '../atoms/TextComp';
-import store from '../../store';
+import arrowLeft from '../../../img/arrow_left.svg';
+import arrowRight from '../../../img/arrow_right.svg';
+import { swipeStart, swipeMove } from '../../../utils/swipe';
+import { nextClick, prevClick } from '../../../utils/arrow';
+import store from '../../../store';
+import Slide from '../../molecules/Slide';
+import { Context } from '../../../utils/context';
 
-import '../../styles/Carousel.css';
+import './Carousel.css';
 
 const Carousel = () => {
   const size = useRef();
@@ -32,29 +31,17 @@ const Carousel = () => {
   }, [handleNextClick, handlePrevClick]);
 
   return (
-    <>
+    <Context.Provider value={{ store, size, sizeWidth, counter }}>
       <h1 className='titleCarousel'>Carousel</h1>
-      <section className='slider'>
+      <section className='slider'
+        onTouchStart={swipeStart}
+        onTouchMove={handleTouchMove}
+      >
         <img className='arrowPrev' src={arrowLeft} onClick={handlePrevClick} />
         <img className='arrowNext' src={arrowRight} onClick={handleNextClick} />
-        {store.map((item, index) => (
-          <div
-            className='slide'
-            ref={size}
-            key={index}
-            style={{
-              transform: `translateX(${-sizeWidth * counter}px)`,
-            }}
-            onTouchStart={swipeStart}
-            onTouchMove={handleTouchMove}
-          >
-            {item.img && <ImgComp src={item.img} />}
-            {item.video && <VideoComp src={item.video} type={item.type} />}
-            {item.text && <TextComp title={item.title} text={item.text} />}
-          </div>
-        ))}
+        <Slide />
       </section>
-    </>
+    </Context.Provider>
   )
 };
 
