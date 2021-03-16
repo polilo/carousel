@@ -8,7 +8,7 @@ Carousel created using react.
 * Supports infinite option
 * Supports scrolling to selected slide
 
-<img src="" width="100%">
+<img src="./src/img/carousel.png" width="100%">
 
 ## BUILD & RUN IT
 
