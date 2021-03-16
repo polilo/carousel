@@ -1,0 +1,21 @@
+ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+li {
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+li::marker {
+  color: white;
+}
+
+.active::marker {
+  color: rgba(0, 119, 179, 0.8);
+}

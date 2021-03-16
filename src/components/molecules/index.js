@@ -1,1 +1,1 @@
-export { default as Slide } from './Slide';
+export { default as Slides } from './Slides';

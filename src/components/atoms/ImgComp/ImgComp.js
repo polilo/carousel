@@ -1,12 +1,9 @@
 import React, { memo } from 'react';
 
-const ImgComp = ({ src }) => {
-  const imgStyles = {
-    width: '100%',
-    height: '100%',
-  };
+import './ImgComp.css';
 
-  return <img src={src} alt='slide-img' style={imgStyles} />
+const ImgComp = ({ src }) => {
+  return <img src={src} alt='slide-img' className='imgComp'/>
 };
 
 export default memo(ImgComp);
