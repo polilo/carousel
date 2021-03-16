@@ -1,3 +1,3 @@
-import { slidesType } from "./slidesType";
+import { slidesType } from "./constans";
 
-export { default } from './slidesType';
+export { default } from './constans';
