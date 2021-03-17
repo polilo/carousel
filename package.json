@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production webpack",
     "watch": "webpack --watch",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
