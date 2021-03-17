@@ -1,16 +1,16 @@
 {
-  "homepage": "https://polilo.github.io/carousel/",
   "name": "carousel-ryzhikov",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "private": true,
+  "homepage": "https://polilo.github.io/carousel/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "start": "webpack serve",
     "build": "NODE_ENV=production webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
