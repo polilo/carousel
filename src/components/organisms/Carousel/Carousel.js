@@ -4,7 +4,7 @@ import arrowRight from '../../../img/arrow_right.svg';
 import { swipeStart, swipeMove } from '../../../utils/swipe';
 import { nextClick, prevClick } from '../../../utils/arrow';
 import Slides from '../../molecules/Slides';
-import { Context } from '../../../context/context';
+import { CarouselContext } from '../../../carouselContext/carouselContext';
 import ScrollBar from '../../atoms/ScrollBar';
 
 import './Carousel.css';
@@ -33,10 +33,10 @@ const Carousel = ({ slides }) => {
   const handleOnClick = useCallback((index, newSizeWidth) => {
     setCounter(index)
     setSizeWidth(newSizeWidth)
-  }, [])
+  }, []);
 
   return (
-    <Context.Provider value={{ slides, size, sizeWidth, counter }}>
+    <CarouselContext.Provider value={{ slides, size, sizeWidth, counter }}>
       <h1 className='titleCarousel'>Carousel</h1>
       <section className='slider'
         onTouchStart={swipeStart}
@@ -47,7 +47,7 @@ const Carousel = ({ slides }) => {
         <Slides />
       </section>
       <ScrollBar props={handleOnClick} />
-    </Context.Provider>
+    </CarouselContext.Provider>
   )
 };
 

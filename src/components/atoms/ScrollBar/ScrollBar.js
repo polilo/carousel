@@ -1,10 +1,10 @@
 import React, { useCallback, useContext, memo } from 'react';
-import { Context } from '../../../context/context';
+import { CarouselContext } from '../../../carouselContext/carouselContext';
 
 import './ScrollBar.css';
 
 const ScrollBar = ({ props: handleOnClick }) => {
-  const { slides, size, counter } = useContext(Context);
+  const { slides, size, counter } = useContext(CarouselContext);
 
   const handleOnClickBar = useCallback((index) => {
     const newSizeWidth = size.current.offsetWidth;

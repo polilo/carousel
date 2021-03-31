@@ -1,7 +1,32 @@
 .slide {
   position: relative;
   min-width: 100%;
-  overflow: hidden;
+  /* overflow-x: scroll; */
   transition: transform 0.7s ease-in-out;
 }
 
+.imgItem {
+  width: 100%;
+  height: 100%;
+}
+
+.videoItem {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.textItem {
+  margin: 10px 50px 30px 50px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.06);
+  background: rgba(102, 102, 255, 0.2);
+}
+
+@media screen and (max-width: 425px){
+  .textItem{
+    font-size: 15px;
+  }
+}
